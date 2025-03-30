@@ -14,6 +14,8 @@ global.yeet([ "viewers" ],
     /_pane$/,
     /_trapdoor$/,              // Includes iron, train and framed glass trapdoor.
     /:chiseled_(?!bookshelf)/, // Don't include chiseled bookshelf.
+    /_pillar$/,
+    /:layered_/,
 
     // ==== Wooden ====
     /_wood$/,                  // Includes stripped wood.
@@ -190,24 +192,22 @@ LootJS.modifiers(event => {
     replace_wood("quark", "azalea");
     replace_wood("quark", "blossom");
 
+    function replace_quark_stone(base, polished, bricks, variants) {
+        for (const stone of variants) {
+            if (base) replace_stone("quark", stone, [ "slab", "vertical_slab", "stairs", "wall" ]);
+            if (polished) replace_stone("quark", `polished_${stone}`, [ "slab", "vertical_slab", "stairs" ]);
+            if (bricks) replace_stone("quark", `${stone}_bricks`, [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
+            replace(`quark:polished_${stone}`, [ `quark:${stone}_pillar` ]);
+        }
+    }
+    replace_quark_stone(false, false, true, [ "granite", "diorite", "andesite" ]);
+    replace_quark_stone(false, true, true, [ "calcite", "dripstone", "tuff" ]);
+    replace_quark_stone(true, true, true, [ "limestone", "jasper", "shale", "myalite" ]);
+
     replace_stone("quark", "cobblestone_bricks", [ "slab", "vertical_slab", "stairs", "wall" ]);
     replace_stone("quark", "mossy_cobblestone_bricks", [ "slab", "vertical_slab", "stairs", "wall" ]);
-    replace_stone("quark", "granite_bricks", [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
-    replace_stone("quark", "diorite_bricks", [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
-    replace_stone("quark", "andesite_bricks", [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
-    for (const type of [ "limestone", "jasper", "shale", "myalite" ]) {
-        replace_stone("quark", type, [ "slab", "vertical_slab", "stairs", "wall" ]);
-        replace_stone("quark", `polished_${type}`, [ "slab", "vertical_slab", "stairs" ]);
-        replace_stone("quark", `${type}_bricks`, [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
-    }
     replace_stone("quark", "permafrost", [ "slab", "vertical_slab", "stairs", "wall" ]);
     replace_stone("quark", "permafrost_bricks", [ "slab", "vertical_slab", "stairs", "wall" ]);
-    replace_stone("quark", "polished_calcite", [ "slab", "vertical_slab", "stairs" ]);
-    replace_stone("quark", "calcite_bricks", [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
-    replace_stone("quark", "polished_dripstone", [ "slab", "vertical_slab", "stairs" ]);
-    replace_stone("quark", "dripstone_bricks", [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
-    replace_stone("quark", "polished_tuff", [ "slab", "vertical_slab", "stairs" ]);
-    replace_stone("quark", "tuff_bricks", [ "slab", "vertical_slab", "stairs", "wall", "chiseled" ]);
     replace_stone("quark", "dirt_bricks", [ "slab", "vertical_slab", "stairs", "wall" ]);
     replace_stone("quark", "sandstone_bricks", [ "slab", "vertical_slab", "stairs", "wall" ]);
     replace_stone("quark", "red_sandstone_bricks", [ "slab", "vertical_slab", "stairs", "wall" ]);
@@ -245,9 +245,11 @@ LootJS.modifiers(event => {
             for (const type of [ "shingles", "tiles" ])
                 replace_stone("create", `${waxed}${stage}copper_${type}`, [ "slab", "vertical_slab", "stairs" ]);
     for (const stone of [ "granite", "diorite", "andesite", "calcite", "dripstone", "deepslate", "tuff",
-                            "asurine", "crimsite", "limestone", "ochrum", "scoria", "scorchia", "veridium" ])
+                          "asurine", "crimsite", "limestone", "ochrum", "scoria", "scorchia", "veridium" ]) {
         for (const type of [ "cut_$", "polished_cut_$", "cut_$_bricks", "small_$_bricks" ])
             replace_stone("create", type.replace("$", stone), [ "slab", "vertical_slab", "stairs", "wall" ]);
+        replace(`create:polished_cut_${stone}`, [ `create:layered_${stone}`, `create:${stone}_pillar` ]);
+    }
 
     // Create: Diesel Generators
 
