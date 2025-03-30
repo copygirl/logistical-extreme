@@ -2096,6 +2096,11 @@
 
 				# Create
 				"unique2,create:railway_casing,create:train_trapdoor",
+				# Framed Glass
+				"slab,create:framed_glass,create:horizontal_framed_glass",
+				"unique1,create:framed_glass,create:horizontal_framed_glass_pane",
+				"unique3,create:framed_glass,create:vertical_framed_glass",
+				"stairs,create:framed_glass,create:vertical_framed_glass_pane",
 			]
 			# A list of block IDs and mappings to be excluded from variant selection.
 			#To exclude a block from being turned into other blocks, just include the block ID (e.g. minecraft:cobblestone).

@@ -12,12 +12,12 @@ global.yeet([ "viewers" ],
     /:(?!paper).*_wall$/,      // Don't include Quark paper wall.
     /_carpet$/,                // Includes leaf carpet.
     /_pane$/,
+    /_trapdoor$/,              // Includes iron, train and framed glass trapdoor.
     /:chiseled_(?!bookshelf)/, // Don't include chiseled bookshelf.
 
     // ==== Wooden ====
     /_wood$/,                  // Includes stripped wood.
     /_hyphae$/,                // Includes stripped hyphae.
-    /_trapdoor$/,              // Includes Create's train trapdoor.
     // Quark
     /_post$/,                  // Includes stripped post.
     /hollow_\w+(log|stem)/,
@@ -26,6 +26,10 @@ global.yeet([ "viewers" ],
     /_palisade$/,
     /_beam$/,
     /_support$/,
+
+    // Create framed glass
+    "create:horizontal_framed_glass",
+    "create:vertical_framed_glass",
 
 );
 
@@ -227,11 +231,19 @@ LootJS.modifiers(event => {
 
     // Create
 
+    replace("create:framed_glass", [
+        "create:horizontal_framed_glass",
+        "create:vertical_framed_glass",
+        "create:framed_glass_pane",
+        "create:horizontal_framed_glass_pane",
+        "create:vertical_framed_glass_pane",
+        "create:framed_glass_trapdoor",
+    ]);
+
     for (const waxed of [ "", "waxed_" ])
         for (const stage of [ "", "exposed_", "weathered_", "oxidized_" ])
             for (const type of [ "shingles", "tiles" ])
                 replace_stone("create", `${waxed}${stage}copper_${type}`, [ "slab", "vertical_slab", "stairs" ]);
-    replace("create:framed_glass", [ "create:framed_glass_trapdoor" ]);
     for (const stone of [ "granite", "diorite", "andesite", "calcite", "dripstone", "deepslate", "tuff",
                             "asurine", "crimsite", "limestone", "ochrum", "scoria", "scorchia", "veridium" ])
         for (const type of [ "cut_$", "polished_cut_$", "cut_$_bricks", "small_$_bricks" ])
