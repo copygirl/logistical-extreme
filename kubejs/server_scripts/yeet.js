@@ -1,6 +1,6 @@
 // priority: 100
 
-var what = {
+let what = {
     viewers:    [], // Hides item from recipe viewer.
     recipes:    [], // Removes any recipe involving the item as input or output.
     item_tags:  [], // Removes all item tags from the item.
