@@ -131,14 +131,14 @@
 	"Shear Vines" = true
 	Shingles = true
 	"Soul Sandstone" = true
-	Stools = true
+	Stools = false
 	"Sturdy Stone" = true
 	Thatch = true
 	"Variant Bookshelves" = true
 	"Variant Chests" = true
 	"Variant Furnaces" = true
 	"Variant Ladders" = true
-	"Vertical Planks" = true
+	"Vertical Planks" = false
 	"Vertical Slabs" = true
 	"Wooden Posts" = true
 	"More Stone Variants" = true
