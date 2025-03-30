@@ -126,7 +126,7 @@
 	"More Potted Plants" = true
 	"Nether Brick Fence Gate" = true
 	"Rainbow Lamps" = true
-	"Raw Metal Bricks" = true
+	"Raw Metal Bricks" = false
 	Rope = true
 	"Shear Vines" = true
 	Shingles = true
