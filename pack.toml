@@ -1,0 +1,8 @@
+name = "Create: Logistical Extreme"
+author = "copygirl"
+version = "0.0.1"
+pack-format = "packwiz:1.1.0"
+
+[versions]
+forge = "47.4.0"
+minecraft = "1.20.1"
