@@ -1790,9 +1790,9 @@
 				"vertical_slab",
 				"stairs",
 				"fence",         # wall, pane
-				"unique1",       # fence_gate
-				"unique2",       # trapdoor
-				"unique3",       # chiseled, support
+				"unique1",       # fence_gate, post
+				"unique2",       # trapdoor, pillar, hollow log
+				"unique3",       # wood, chiseled, layered, support
 			]
 			#By default, only a mod's namespace is scanned for variants for its items (e.g. if coolmod adds coolmod:fun_block, it'll search only for coolmod:fun_block_stairs).
 			# Mods in this list are also scanned for variants if none are found in itself (e.g. if quark is in the list and coolmod:fun_block_stairs doesn't exist, it'll try to look for quark:fun_block_stairs next)
@@ -2092,7 +2092,25 @@
 				# "slab,biomesoplenty:yellow_autumn_leaves,everycomp:q/biomesoplenty/yellow_autumn_leaf_carpet",
 
 				# Minecraft
+				"unique2,minecraft:quartz_block,minecraft:quartz_pillar",
 				"unique3,minecraft:mud_bricks,quark:carved_mud_bricks",
+
+				# Quark
+				# Pillar
+				"unique2,minecraft:polished_granite,quark:granite_pillar",
+				"unique2,minecraft:polished_diorite,quark:diorite_pillar",
+				"unique2,minecraft:polished_andesite,quark:andesite_pillar",
+				"unique2,quark:polished_limestone,quark:limestone_pillar",
+				"unique2,quark:polished_jasper,quark:jasper_pillar",
+				"unique2,quark:polished_shale,quark:shale_pillar",
+				"unique2,quark:polished_myalite,quark:myalite_pillar",
+				"unique2,quark:polished_calcite,quark:calcite_pillar",
+				"unique2,quark:polished_dripstone,quark:dripstone_pillar",
+				"unique2,quark:polished_tuff,quark:tuff_pillar",
+				"unique2,quark:mud_bricks,quark:mud_pillar",
+				"unique2,quark:purpur_block,quark:purpur_pillar",
+				"unique2,quark:midori_block,quark:midori_pillar",
+				"unique2,quark:iron_plate,quark:iron_pillar",
 
 				# Create
 				"unique2,create:railway_casing,create:train_trapdoor",
@@ -2101,6 +2119,37 @@
 				"unique1,create:framed_glass,create:horizontal_framed_glass_pane",
 				"unique3,create:framed_glass,create:vertical_framed_glass",
 				"stairs,create:framed_glass,create:vertical_framed_glass_pane",
+				# Pillar
+				"unique2,create:polished_cut_granite,create:granite_pillar",
+				"unique2,create:polished_cut_diorite,create:diorite_pillar",
+				"unique2,create:polished_cut_andesite,create:andesite_pillar",
+				"unique2,create:polished_cut_calcite,create:calcite_pillar",
+				"unique2,create:polished_cut_dripstone,create:dripstone_pillar",
+				"unique2,create:polished_cut_deepslate,create:deepslate_pillar",
+				"unique2,create:polished_cut_tuff,create:tuff_pillar",
+				"unique2,create:polished_cut_asurine,create:asurine_pillar",
+				"unique2,create:polished_cut_crimsite,create:crimsite_pillar",
+				"unique2,create:polished_cut_limestone,create:limestone_pillar",
+				"unique2,create:polished_cut_ochrum,create:ochrum_pillar",
+				"unique2,create:polished_cut_scoria,create:scoria_pillar",
+				"unique2,create:polished_cut_scorchia,create:scorchia_pillar",
+				"unique2,create:polished_cut_veridium,create:veridium_pillar",
+				# Layered
+				"unique3,create:polished_cut_granite,create:layered_granite",
+				"unique3,create:polished_cut_diorite,create:layered_diorite",
+				"unique3,create:polished_cut_andesite,create:layered_andesite",
+				"unique3,create:polished_cut_calcite,create:layered_calcite",
+				"unique3,create:polished_cut_dripstone,create:layered_dripstone",
+				"unique3,create:polished_cut_deepslate,create:layered_deepslate",
+				"unique3,create:polished_cut_tuff,create:layered_tuff",
+				"unique3,create:polished_cut_asurine,create:layered_asurine",
+				"unique3,create:polished_cut_crimsite,create:layered_crimsite",
+				"unique3,create:polished_cut_limestone,create:layered_limestone",
+				"unique3,create:polished_cut_ochrum,create:layered_ochrum",
+				"unique3,create:polished_cut_scoria,create:layered_scoria",
+				"unique3,create:polished_cut_scorchia,create:layered_scorchia",
+				"unique3,create:polished_cut_veridium,create:layered_veridium",
+				
 			]
 			# A list of block IDs and mappings to be excluded from variant selection.
 			#To exclude a block from being turned into other blocks, just include the block ID (e.g. minecraft:cobblestone).
