@@ -1,0 +1,7 @@
+/.git/
+/.upload/
+/.gitignore
+/.packwizignore
+/pack-instance.sh
+/pack-instance.toml
+/publish.sh
