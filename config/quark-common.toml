@@ -1832,6 +1832,7 @@
 				"unique3,quark:myalite_bricks,quark:chiseled_myalite_bricks",
 				"unique3,quark:calcite_bricks,quark:chiseled_calcite_bricks",
 				"unique3,quark:dripstone_bricks,quark:chiseled_dripstone_bricks",
+				"unique3,quark:tuff_bricks,quark:chiseled_tuff_bricks",
 				"unique3,quark:soul_sandstone,quark:chiseled_soul_sandstone",
 
 				# Planks => Support
@@ -2089,6 +2090,9 @@
 				# "slab,biomesoplenty:umbran_leaves,everycomp:q/biomesoplenty/umbran_leaf_carpet",
 				# "slab,biomesoplenty:willow_leaves,everycomp:q/biomesoplenty/willow_leaf_carpet",
 				# "slab,biomesoplenty:yellow_autumn_leaves,everycomp:q/biomesoplenty/yellow_autumn_leaf_carpet",
+
+				# Minecraft
+				"unique3,minecraft:mud_bricks,quark:carved_mud_bricks",
 
 				# Create
 				"unique2,create:railway_casing,create:train_trapdoor",
