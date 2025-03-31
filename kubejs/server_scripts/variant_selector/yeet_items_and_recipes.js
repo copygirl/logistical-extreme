@@ -1,9 +1,7 @@
 // Hides variants from recipe viewers, and removes all
 // recipes they're involved in (both as input, and output).
 
-global.yeet([ "viewers" ],
-// FIXME: Once we have recipes figured out, add "recipes" back in.
-// global.yeet([ "viewers", "recipes" ],
+global.yeet([ "viewers", "recipes" ],
 
     // ==== Common ====
     /_slab$/,                  // Includes vertical slab.
