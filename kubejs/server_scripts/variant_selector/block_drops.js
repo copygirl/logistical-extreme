@@ -3,12 +3,6 @@
 // For example, a stair will always drop a full block.
 
 LootJS.modifiers(event => {
-    const COLORS = [ 
-        "brown", "red", "orange", "yellow", "lime", "green",
-        "cyan", "light_blue", "blue", "purple", "magenta", "pink",
-        "white", "light_gray", "gray", "black"
-    ];
-
     function replace(original, variants) {
         for (const variant of variants)
             event
@@ -146,7 +140,7 @@ LootJS.modifiers(event => {
     replace("minecraft:moss_block", [ "minecraft:moss_carpet" ]);
     replace("minecraft:iron_block", [ "minecraft:iron_trapdoor" ]);
 
-    for (const color of COLORS)
+    for (const color in global.COLORS)
         replace(`minecraft:${color}_wool`, [ `minecraft:${color}_carpet` ]);
 
     for (const type of [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak",
@@ -192,7 +186,7 @@ LootJS.modifiers(event => {
     replace("quark:bamboo_mat", [ "quark:bamboo_mat_carpet" ]);
     replace_stone("quark", "thatch", [ "slab", "vertical_slab", "stairs" ]);
     replace_stone("quark", "shingles", [ "slab", "vertical_slab", "stairs" ]);
-    for (const color of COLORS) replace_stone("quark", `${color}_shingles`, [ "slab", "vertical_slab", "stairs" ]);
+    for (const color in global.COLORS) replace_stone("quark", `${color}_shingles`, [ "slab", "vertical_slab", "stairs" ]);
     replace("minecraft:ancient_leaves", [ "quark:ancient_leaf_carpet" ]);
     for (const type of [ "blue", "lavender", "orange", "yellow", "red" ]) replace(`minecraft:${type}_blossom_leaves`, [ `quark:${type}_blossom_leaf_carpet` ]);
 
