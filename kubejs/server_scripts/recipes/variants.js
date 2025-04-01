@@ -14,5 +14,5 @@ ServerEvents.recipes(event => {
     // Create
     event.shaped("create:schematic_table", [ "PPP", " S ", " S " ], { P: "#minecraft:planks", S: "minecraft:smooth_stone" });
     event.shaped("create:turntable", [ "P", "S" ], { P: "#minecraft:planks", S: "create:shaft" });
-    for (const color in global.COLORS) event.shaped(`create:${color}_seat`, [ "W", "P" ], { W: `minecraft:${color}_wool`, P: "#minecraft:planks" });
+    for (const color of global.COLORS) event.shaped(`create:${color}_seat`, [ "W", "P" ], { W: `minecraft:${color}_wool`, P: "#minecraft:planks" });
 });
