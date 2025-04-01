@@ -2,6 +2,7 @@
 /.upload/
 /.gitignore
 /.packwizignore
+/.editorconfig
 /pack-instance.sh
 /pack-instance.toml
 /publish.sh
