@@ -119,7 +119,7 @@ StartupEvents.postInit(event => {
         add(`create:polished_cut_${type}`, { unique2: `create:${type}_pillar`, unique2: `create:layered_${type}` });
     }
 
-    for (const type of [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "crimson", "warped", "ornate_iron" ])
+    for (const type of [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "crimson", "warped", "mangrove", "ornate_iron" ])
         add(`create:${type}_window`, { wall: `create:${type}_window_pane` });
 
     // For the sake of being able to place any framed glass using a single
@@ -134,6 +134,11 @@ StartupEvents.postInit(event => {
     });
     // However, this one isn't included. :p
     add("create:tiled_glass", { wall: "create:tiled_glass_pane" });
+
+    // Create: Connected
+
+    for (const type of [ "cherry", "bamboo" ])
+        add(`create_connected:${type}_window`, { wall: `create_connected:${type}_window_pane` });
 
     // Create: Diesel Generators
 
