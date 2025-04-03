@@ -1,12 +1,12 @@
 const stack = {
     block_full   : 1, // default
     block_large  : 2, // signs, lanterns, painting
-    block_medium : 4, // pressure plates, iron bars, small plants
-    block_small  : 8, // torches, buttons, chains, ladders, rails, large plants
+    block_medium : 4, // pressure plates, iron bars, large plants
+    block_small  : 8, // torches, buttons, chains, ladders, rails, small plants
 
     item_large  : 4,  // default, leather
-    item_medium : 8,  // gems, saplings
-    item_small  : 16, // dusts, sticks, arrows, seeds
+    item_medium : 8,  // saplings, tree seeds
+    item_small  : 16, // sticks, arrows, seeds
 
     mechanical_large  : 2, // large cogwheels
     mechanical_medium : 4, // small cogwheels
@@ -16,7 +16,8 @@ const stack = {
     component_simple  : 4, // propeller, brass hand
 
     food_snack : 16, // carrot
-    food_meal  : 8,  // stews
+    food_meal  : 8,  // cooked
+    food_feast : 4,  // stews
 
     raw    : 4,
     ingot  : 4,
@@ -31,6 +32,7 @@ const stack = {
 const manual = {
     "create:blaze_cake": 1,
     "create:creative_blaze_cake": 1,
+    "minecraft:pink_petals": 16,
 };
 
 // Full block and large items not included,
@@ -39,7 +41,7 @@ const groups = {
     // Blocks
 
     block_large: [
-        "#minecraft:signs",
+        /_sign$/,
         // Lanterns
         "minecraft:lantern",
         "minecraft:soul_lantern",
@@ -47,16 +49,13 @@ const groups = {
         "quark:paper_lantern_sakura",
         // Paintings, frames and similar
         "minecraft:painting",
-        "minecraft:item_frame",
-        "minecraft:glow_item_frame",
-        "quark:glass_item_frame",
-        "quark:glowing_glass_item_frame",
+        /[:_]item_frame$/,
         "create:crafting_blueprint",
         "create:placard",
     ],
     block_medium: [
-        "#minecraft:pressure_plates", // TODO: Add Quark obsidian and Copycat+ pressure plates to tag.
-        "#minecraft:banners",
+        /_pressure_plate$/,
+        /_banners$/,
         "minecraft:flower_pot",
         "quark:iron_grate",
         // Bars
@@ -65,9 +64,57 @@ const groups = {
         "create:andesite_bars",
         "create:brass_bars",
         "create:copper_bars",
+        // Large plants
+        "minecraft:sunflower",
+        "minecraft:lilac",
+        "minecraft:rose_bush",
+        "minecraft:peony",
+        "minecraft:pitcher_plant",
+        // Redstone components
+        "minecraft:lever",
+        "create:analog_lever",
+        "minecraft:repeater",
+        "minecraft:comparator",
+        "quark:redstone_randomizer",
+        "create:redstone_link",
+        "create_connected:linked_transmitter",
+        "create:pulse_repeater",
+        "create:pulse_extender",
+        "create:powered_latch",
+        "create:powered_toggle_latch",
+        "create_connected:sequenced_pulse_generator",
+        // Corundum clusters
+        /_corundum_cluster$/,
+    ],
+    block_small: [
+        /_button$/,
+        "minecraft:chain",
+        "minecraft:tripwire_hook",
+        "quark:rope",
+        // Torches, rods and similar
+        "minecraft:torch",
+        "minecraft:soul_torch",
+        "minecraft:redstone_torch",
+        /_candle$/,
+        "minecraft:lightning_rod",
+        "minecraft:end_rod",
+        "quark:iron_rod",
+        // Ladders, rails and similar
+        /_ladder$/,
+        /_rail$/,
         // Small plants
-        "#forge:mushrooms", // TODO: Add Quark glow shroom to tag.
-        "#minecraft:small_flowers",
+        /_mushroom$/,
+        "minecraft:dandelion",
+        "minecraft:poppy",
+        "minecraft:blue_orchid",
+        "minecraft:allium",
+        "minecraft:azure_bluet",
+        /_tulip$/,
+        "minecraft:oxeye_daisy",
+        "minecraft:cornflower",
+        "minecraft:lily_of_the_valley",
+        "minecraft:torchflower",
+        "minecraft:wither_rose",
         "minecraft:grass",
         "minecraft:fern",
         "minecraft:dead_bush",
@@ -90,62 +137,22 @@ const groups = {
         "minecraft:seagrass",
         "minecraft:sea_pickle",
         "minecraft:kelp",
-        /^minecraft:.*_coral(_fan)?$/,
+        /_coral(_fan)?$/,
         "minecraft:sculk_vein",
-        // Redstone components
-        "minecraft:lever",
-        "create:analog_lever",
-        "minecraft:repeater",
-        "minecraft:comparator",
-        "quark:redstone_randomizer",
-        "create:redstone_link",
-        "create_connected:linked_transmitter",
-        "create:pulse_repeater",
-        "create:pulse_extender",
-        "create:powered_latch",
-        "create:powered_toggle_latch",
-        "create_connected:sequenced_pulse_generator",
-        // Corundum clusters
-        "quark:red_corundum_cluster",
-        "quark:orange_corundum_cluster",
-        "quark:yellow_corundum_cluster",
-        "quark:green_corundum_cluster",
-        "quark:blue_corundum_cluster",
-        "quark:indigo_corundum_cluster",
-        "quark:violet_corundum_cluster",
-        "quark:white_corundum_cluster",
-        "quark:black_corundum_cluster",
-    ],
-    block_small: [
-        "#minecraft:buttons", // TODO: Add Copycat+ button to tag.
-        "minecraft:chain",
-        "minecraft:tripwire_hook",
-        "quark:rope",
-        // Torches, rods and similar
-        "minecraft:torch",
-        "minecraft:soul_torch",
-        "minecraft:redstone_torch",
-        "#minecraft:candles",
-        "minecraft:lightning_rod",
-        "minecraft:end_rod",
-        "quark:iron_rod",
-        // Ladders, rails and similar
-        "#minecraft:ladders", // TODO: Add Create and Copycats+ ladders to tag.
-        "#minecraft:rails", // TODO: Add Create controller rails to tag.
-        // Large plants
-        "#minecraft:tall_flowers",
     ],
 
     // Items
 
     item_medium: [
-        "#forge:gems",
-        "#minecraft:saplings",
+        /_sapling$/,
+        "minecraft:mangrove_propagule",
+        /^dynamictrees:.+_seed$/,
+        /^dynamictreesplus:.+_seed$/,
+        /^dtquark:.+_seed$/,
         "minecraft:flint",
         "minecraft:wheat",
-        "minecraft:egg",
+        /_egg$/,
         /^quark:egg_parrot_/,
-        /_spawn_egg$/, // In case they become obtainable?
         "minecraft:rotten_flesh",
         "minecraft:bone",
         "minecraft:blaze_rod",
@@ -162,18 +169,15 @@ const groups = {
         "minecraft:rabbit_foot",
         "quark:crab_shell",
         /_banner_pattern$/,
-        "#minecraft:decorated_pot_sherds",
-        "minecraft:netherite_upgrade_smithing_template",
-        "#minecraft:trim_templates",
-        "quark:smithing_template_rune",
+        /_sherd$/,
+        /_template$/,
         "create:filter",
         "create:attribute_filter",
     ],
     item_small: [
-        "#forge:dust", // TODO: Add gunpowder, sugar and blaze powder to tag.
-        "#forge:dyes",
+        /_dye$/,
+        /_arrow$/,
         "minecraft:stick",
-        "#minecraft:arrows",
         "minecraft:name_tag",
         "minecraft:bone_meal",
         "minecraft:snowball",
@@ -186,9 +190,8 @@ const groups = {
         "create:red_sandpaper",
         "minecraft:ghast_tear",
         // Seeds
-        "#minecraft:seeds",
+        /_seeds$/,
         "minecraft:cocoa_beans",
-        "minecraft:torchflower_seeds",
         "minecraft:pitcher_pod",
         "minecraft:nether_wart",
     ],
@@ -244,10 +247,10 @@ const groups = {
         "quark:ancient_fruit",
         "minecraft:carrot",
         "minecraft:potato",
-        "minecraft:baked_potato",
         "minecraft:poisonous_potato",
         "minecraft:beetroot",
         "minecraft:cookie",
+        "minecraft:glow_berries",
         "minecraft:sweet_berries",
     ],
     food_meal: [
@@ -255,22 +258,23 @@ const groups = {
         "minecraft:enchanted_golden_apple",
         "create:honeyed_apple",
         "minecraft:golden_carrot",
+        "minecraft:baked_potato",
+        // Should raw meat and fish be in snack category?
+        // Feels like having them be "unfinished meals" makes sense.
         "minecraft:beef", "minecraft:cooked_beef",
         "minecraft:porkchop", "minecraft:cooked_porkchop",
         "minecraft:mutton", "minecraft:cooked_mutton",
         "minecraft:chicken", "minecraft:cooked_chicken",
         "minecraft:rabbit", "minecraft:cooked_rabbit",
         "quark:crab_leg", "quark:cooked_crab_leg",
-        "#minecraft:fishes",
+        "minecraft:cod", "minecraft:cooked_cod",
+        "minecraft:salmon", "minecraft:cooked_salmon",
+        "minecraft:tropical_fish",
+        "minecraft:pufferfish",
         "minecraft:bread",
         "create:dough",
         "create:bar_of_chocolate",
         "create:chocolate_glazed_berries",
-        // Bowls
-        "minecraft:bowl",
-        "minecraft:mushroom_stew",
-        "minecraft:beetroot_stew",
-        "minecraft:suspicious_stew",
         // Bottles, potions
         "minecraft:glass_bottle",
         "minecraft:honey_bottle",
@@ -281,21 +285,48 @@ const groups = {
         "minecraft:lingering_potion",
         "create:builders_tea",
     ],
+    food_feast: [
+        // Stews
+        "minecraft:bowl",
+        "minecraft:mushroom_stew",
+        "minecraft:beetroot_stew",
+        "minecraft:suspicious_stew",
+    ],
 
     // Other
 
-    raw    : [ "#forge:raw_materials", "#create:crushed_raw_materials" ],
-    ingot  : [ "#forge:ingots" ],
-    sheet  : [ "#forge:plates" ],
-    nugget : [ "#forge:nuggets" ],
+    raw    : [ /:raw_[a-z]+$/, /:crushed_raw_/, "minecraft:netherite_scrap" ],
+    ingot  : [ /_ingot$/ ],
+    sheet  : [ /_sheet$/, /_plate$/ ],
+    nugget : [ /_nugget$/ ],
 
     pile: [
         // TODO: Add dirt and sand piles, etc.
         "minecraft:clay",
         "createdieselgenerators:wood_chip",
     ],
-    gem  : [ "#forge:gems" ], // Add Create (polished) rose quartz and Clockwork wanderlite crystal.
-    dust : [ "#forge:dust" ], // Add Create wheat flour, cinder flour and powdered obsidian to tag.
+    gem: [
+        "minecraft:emerald",
+        "minecraft:lapis_lazuli",
+        "minecraft:diamond",
+        "minecraft:quartz",
+        "minecraft:amethyst_shard",
+        "minecraft:prismarine_shard",
+        "minecraft:prismarine_crystals",
+        "minecraft:echo_shard",
+        "create:rose_quartz",
+        "create:polished_rose_quartz",
+        "vs_clockwork:wanderlite_crystal",
+    ],
+    dust: [
+        /_dust$/,
+        "minecraft:gunpowder",
+        "minecraft:blaze_powder",
+        "minecraft:sugar",
+        "create:wheat_flour",
+        "create:cinder_flour",
+        "create:powdered_obsidian",
+    ],
 };
 
 ItemEvents.modification(event => {
@@ -310,10 +341,6 @@ ItemEvents.modification(event => {
                 if (match instanceof RegExp) {
                     if (match.test(id_str))
                         { item.maxStackSize = stack[group]; return; }
-                } else if (match.startsWith("#")) {
-                    // FIXME: Tags are not available at this point. Use regex matching?
-                    // if (item.hasTag(match.slice(1)))
-                    //     { item.maxStackSize = stack[group]; return; }
                 } else if (id_str == match)
                     { item.maxStackSize = stack[group]; return; }
 
