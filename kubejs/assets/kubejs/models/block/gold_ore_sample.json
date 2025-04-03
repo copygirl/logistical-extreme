@@ -1,0 +1,7 @@
+{
+  "parent": "kubejs:block/ore_sample",
+  "textures": {
+    "particle": "block/stone",
+    "ore": "block/gold_ore"
+  }
+}

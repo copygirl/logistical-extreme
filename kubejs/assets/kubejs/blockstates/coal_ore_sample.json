@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "kubejs:block/coal_ore_sample"
+    }
+  }
+}
