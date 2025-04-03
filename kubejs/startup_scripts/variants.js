@@ -61,7 +61,8 @@ StartupEvents.postInit(event => {
     addAutoMany("quark", [
         "cobblestone_bricks", "mossy_cobblestone_bricks",
         "granite_bricks", "diorite_bricks", "andesite_bricks",
-        "limestone", "polished_limestone", "limestone_bricks",
+        // Disabled in favor of Create's limestone.
+        // "limestone", "polished_limestone", "limestone_bricks",
         "jasper", "polished_jasper", "jasper_bricks",
         "shale", "polished_shale", "shale_bricks",
         "myalite", "polished_myalite", "myalite_bricks",
