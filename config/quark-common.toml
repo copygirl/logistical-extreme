@@ -1172,7 +1172,7 @@
 			Dimensions = ["minecraft:the_nether"]
 
 	[world.new_stone_types]
-		"Enable Limestone" = true
+		"Enable Limestone" = false
 		"Enable Jasper" = true
 		"Enable Shale" = true
 		"Enable Myalite" = true
@@ -2185,19 +2185,6 @@
 				"stairs,quark:andesite_bricks,quark:andesite_bricks_stairs",
 				"wall,quark:andesite_bricks,quark:andesite_bricks_wall",
 				"unique3,quark:andesite_bricks,quark:chiseled_andesite_bricks",
-				"slab,quark:limestone,quark:limestone_slab",
-				"vertical,quark:limestone,quark:limestone_vertical_slab",
-				"stairs,quark:limestone,quark:limestone_stairs",
-				"wall,quark:limestone,quark:limestone_wall",
-				"unique2,quark:limestone,quark:limestone_pillar",
-				"slab,quark:polished_limestone,quark:polished_limestone_slab",
-				"vertical,quark:polished_limestone,quark:polished_limestone_vertical_slab",
-				"stairs,quark:polished_limestone,quark:polished_limestone_stairs",
-				"slab,quark:limestone_bricks,quark:limestone_bricks_slab",
-				"vertical,quark:limestone_bricks,quark:limestone_bricks_vertical_slab",
-				"stairs,quark:limestone_bricks,quark:limestone_bricks_stairs",
-				"wall,quark:limestone_bricks,quark:limestone_bricks_wall",
-				"unique3,quark:limestone_bricks,quark:chiseled_limestone_bricks",
 				"slab,quark:jasper,quark:jasper_slab",
 				"vertical,quark:jasper,quark:jasper_vertical_slab",
 				"stairs,quark:jasper,quark:jasper_stairs",
@@ -2725,6 +2712,7 @@
 				"wall,create:dark_oak_window,create:dark_oak_window_pane",
 				"wall,create:crimson_window,create:crimson_window_pane",
 				"wall,create:warped_window,create:warped_window_pane",
+				"wall,create:mangrove_window,create:mangrove_window_pane",
 				"wall,create:ornate_iron_window,create:ornate_iron_window_pane",
 				"slab,create:framed_glass,create:horizontal_framed_glass",
 				"unique3,create:framed_glass,create:vertical_framed_glass",
@@ -2733,6 +2721,8 @@
 				"stairs,create:framed_glass,create:vertical_framed_glass_pane",
 				"unique2,create:framed_glass,create:framed_glass_trapdoor",
 				"wall,create:tiled_glass,create:tiled_glass_pane",
+				"wall,create_connected:cherry_window,create_connected:cherry_window_pane",
+				"wall,create_connected:bamboo_window,create_connected:bamboo_window_pane",
 				"slab,createdieselgenerators:chip_wood_block,createdieselgenerators:chip_wood_slab",
 				"stairs,createdieselgenerators:chip_wood_block,createdieselgenerators:chip_wood_stairs",
 				"slab,createdieselgenerators:asphalt_block,createdieselgenerators:asphalt_slab",
