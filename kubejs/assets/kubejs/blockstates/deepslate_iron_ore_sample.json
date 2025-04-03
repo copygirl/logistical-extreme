@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "kubejs:block/deepslate_iron_ore_sample"
+    }
+  }
+}

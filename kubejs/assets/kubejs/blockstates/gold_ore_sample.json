@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "kubejs:block/gold_ore_sample"
+    }
+  }
+}
