@@ -149,6 +149,7 @@ const groups = {
         /^dynamictrees:.+_seed$/,
         /^dynamictreesplus:.+_seed$/,
         /^dtquark:.+_seed$/,
+        "minecraft:bowl",
         "minecraft:flint",
         "minecraft:wheat",
         /_egg$/,
@@ -276,21 +277,13 @@ const groups = {
         "create:bar_of_chocolate",
         "create:chocolate_glazed_berries",
         // Bottles, potions
-        "minecraft:glass_bottle",
-        "minecraft:honey_bottle",
+        /_bottle$/,
+        /[:_]potion$/,
         "minecraft:dragon_breath",
-        "minecraft:experience_bottle",
-        "minecraft:potion",
-        "minecraft:splash_potion",
-        "minecraft:lingering_potion",
         "create:builders_tea",
     ],
     food_feast: [
-        // Stews
-        "minecraft:bowl",
-        "minecraft:mushroom_stew",
-        "minecraft:beetroot_stew",
-        "minecraft:suspicious_stew",
+        /_stew$/,
     ],
 
     // Other
