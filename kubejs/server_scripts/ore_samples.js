@@ -1,4 +1,4 @@
-LootJS.modifiers((event) => {
+LootJS.modifiers(event => {
     for (var { id, drop } of Object.values(global.SAMPLES)) {
         if (drop == null) continue;
         event.addBlockLootModifier(id)

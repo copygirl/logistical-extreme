@@ -17,7 +17,7 @@ for (const key in global.SAMPLES) {
     entry.name = entry.name || `${key[0].toUpperCase()}${key.substring(1)}`;
 }
 
-StartupEvents.registry("block", (event) => {
+StartupEvents.registry("block", event => {
     for (const { id, name } of Object.values(global.SAMPLES)) {
         event.create(id)
             .displayName(`${name} Sample`)
