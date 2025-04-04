@@ -58,6 +58,7 @@ const groups = {
         /_banners$/,
         "minecraft:flower_pot",
         "quark:iron_grate",
+        "minecraft:pointed_dripstone", // 4x crafts into a block
         // Bars
         "minecraft:iron_bars",
         "quark:gold_bars",
@@ -118,7 +119,8 @@ const groups = {
         "minecraft:grass",
         "minecraft:fern",
         "minecraft:dead_bush",
-        "minecraft:sugarcane",
+        "minecraft:bamboo",
+        "minecraft:sugar_cane",
         "minecraft:crimson_roots",
         "minecraft:warped_roots",
         "minecraft:nether_sprouts",
