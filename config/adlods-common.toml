@@ -26,5 +26,7 @@
 	#To disable all generated features of the specified mod, use "modID:*"
 	#To see available features, use the '/place feature' command
 	#
-	disabledFeatures = []
-
+	disabledFeatures = [
+		"create:zinc_ore",
+		"vs_clockwork:ore_wanderlite",
+	]
