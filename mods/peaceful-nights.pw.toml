@@ -1,6 +1,6 @@
 name = "Peaceful Nights"
 filename = "peaceful_nights-forge-0.1.0+1.20.1.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/wusZLXmN/versions/DhtqcP7Y/peaceful_nights-forge-0.1.0%2B1.20.1.jar"
