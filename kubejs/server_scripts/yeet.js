@@ -17,7 +17,9 @@ global.yeet = function() {
 
 ServerEvents.recipes(event => {
     for (const item of what.recipes) {
-        event.remove({ input: item });
+        // Makes sure to only remove the recipes when the exact
+        // item is involved, not when it's just part of a tag.
+        event.remove({ input: (item instanceof RegExp) ? item : { item: item } });
         event.remove({ output: item });
     }
 });
