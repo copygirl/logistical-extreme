@@ -136,6 +136,8 @@ StartupEvents.postInit(event => {
     // However, this one isn't included. :p
     add("create:tiled_glass", { wall: "create:tiled_glass_pane" });
 
+    add("create:railway_casing", { unique2: "create:train_trapdoor" });
+
     // Create: Connected
 
     for (const type of [ "cherry", "bamboo" ])

@@ -2721,6 +2721,7 @@
 				"stairs,create:framed_glass,create:vertical_framed_glass_pane",
 				"unique2,create:framed_glass,create:framed_glass_trapdoor",
 				"wall,create:tiled_glass,create:tiled_glass_pane",
+				"unique2,create:railway_casing,create:train_trapdoor",
 				"wall,create_connected:cherry_window,create_connected:cherry_window_pane",
 				"wall,create_connected:bamboo_window,create_connected:bamboo_window_pane",
 				"slab,createdieselgenerators:chip_wood_block,createdieselgenerators:chip_wood_slab",
