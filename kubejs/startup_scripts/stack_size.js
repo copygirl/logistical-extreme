@@ -101,7 +101,7 @@ const groups = {
         "minecraft:end_rod",
         "quark:iron_rod",
         // Ladders, rails and similar
-        /_ladder$/,
+        /[:_]ladder$/,
         /_rail$/,
         // Small plants
         /_mushroom$/,
