@@ -1,11 +1,12 @@
 const stack = {
     block_full   : 1, // default
     block_large  : 2, // signs, lanterns, painting
-    block_medium : 4, // pressure plates, iron bars, large plants
-    block_small  : 8, // torches, buttons, chains, ladders, rails, small plants
+    block_medium : 4, // planks, iron bars, large plants
+    block_small  : 8, // torches, pressure plates, buttons, chains, ladders, rails, small plants
+    // NOTE: Planks are one of the few "full size" blocks that stack more.
 
-    item_large  : 4,  // default, leather
-    item_medium : 8,  // saplings, tree seeds
+    item_large  :  4, // default, leather
+    item_medium :  8, // saplings, tree seeds
     item_small  : 16, // sticks, arrows, seeds
 
     mechanical_large  : 2, // large cogwheels
@@ -16,16 +17,16 @@ const stack = {
     component_simple  : 4, // propeller, brass hand
 
     food_snack : 16, // carrot
-    food_meal  : 8,  // cooked
-    food_feast : 4,  // stews
+    food_meal  :  8, // cooked
+    food_feast :  4, // stews
 
-    raw    : 4,
-    ingot  : 4,
-    sheet  : 8,
+    raw    :  4,
+    ingot  :  4,
+    sheet  :  8,
     nugget : 16,
 
-    pile : 4,
-    gem  : 8,
+    pile :  4,
+    gem  :  8,
     dust : 16,
 };
 
@@ -54,11 +55,11 @@ const groups = {
         "create:placard",
     ],
     block_medium: [
-        /_pressure_plate$/,
+        /_planks$/, // 1 log turns into 4 planks
         /_banners$/,
         "minecraft:flower_pot",
         "quark:iron_grate",
-        "minecraft:pointed_dripstone", // 4x crafts into a block
+        "minecraft:pointed_dripstone", // 4 crafts into a block
         // Bars
         "minecraft:iron_bars",
         "quark:gold_bars",
@@ -89,6 +90,7 @@ const groups = {
     ],
     block_small: [
         /_button$/,
+        /_pressure_plate$/,
         "minecraft:chain",
         "minecraft:tripwire_hook",
         "quark:rope",
