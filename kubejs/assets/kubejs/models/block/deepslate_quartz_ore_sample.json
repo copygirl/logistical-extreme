@@ -1,0 +1,7 @@
+{
+  "parent": "kubejs:block/ore_sample",
+  "textures": {
+    "particle": "block/deepslate",
+    "ore": "kubejs:block/deepslate_quartz_ore"
+  }
+}

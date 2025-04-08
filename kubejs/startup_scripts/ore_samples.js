@@ -9,6 +9,7 @@ global.SAMPLES = {
     emerald    : {  },
     zinc       : { drop: "create:raw_zinc" },
     wanderlite : { drop: "vs_clockwork:wanderlite_crystal" },
+    quartz     : { drop: "minecraft:quartz" },
 };
 
 for (const key in global.SAMPLES) {
