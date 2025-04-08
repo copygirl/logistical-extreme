@@ -237,7 +237,7 @@ const groups = {
     // Components
 
     component_complex: [
-        "create:precision_mechanism",
+        /_mechanism$/,
     ],
     component_simple: [
         "create:propeller",
@@ -245,6 +245,8 @@ const groups = {
         "create:brass_hand",
         "create:crafter_slot_cover",
         "create:electron_tube",
+        "kubejs:saw_blade",
+        "kubejs:drill_head",
     ],
 
     // Foods
