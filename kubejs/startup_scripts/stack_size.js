@@ -31,9 +31,13 @@ const stack = {
 };
 
 const manual = {
+    // Minecraft
+    "minecraft:dragon_egg": 1,
+    "minecraft:pink_petals": 16,
+    // Create
     "create:blaze_cake": 1,
     "create:creative_blaze_cake": 1,
-    "minecraft:pink_petals": 16,
+    "create:andesite_alloy": 8,
 };
 
 // Full block and large items not included,
@@ -104,9 +108,10 @@ const groups = {
         "quark:iron_rod",
         // Ladders, rails and similar
         /[:_]ladder$/,
-        /_rail$/,
+        /[:_]rail$/,
         // Small plants
         /_mushroom$/,
+        "quark:glow_shroom",
         "minecraft:dandelion",
         "minecraft:poppy",
         "minecraft:blue_orchid",
@@ -317,6 +322,7 @@ const groups = {
     ],
     dust: [
         /_dust$/,
+        "minecraft:redstone",
         "minecraft:gunpowder",
         "minecraft:blaze_powder",
         "minecraft:sugar",
