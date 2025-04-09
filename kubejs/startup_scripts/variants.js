@@ -148,6 +148,11 @@ StartupEvents.postInit(event => {
     addAuto("createdieselgenerators:chip_wood_block");
     addAuto("createdieselgenerators:asphalt_block");
 
+    // Every Compat (Wood Good)
+
+    for (const type of [ "azalea", "ancient", "blossom" ])
+        add(`everycomp:c/quark/${type}_window`, { wall: `everycomp:c/quark/${type}_window_pane` });
+
 
 
     // Modify the requirements of Create schematics.
@@ -158,7 +163,7 @@ StartupEvents.postInit(event => {
 
 
 
-    // DEBUGGING: Enable this to print the VARIANTS dictioary in a format
+    // DEBUGGING: Enable this to print the VARIANTS dictionary in a format
     // that can be easily pasted into the "quark-common.toml" config file.
     if (false) {
         let list = [];
