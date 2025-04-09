@@ -2728,6 +2728,9 @@
 				"stairs,createdieselgenerators:chip_wood_block,createdieselgenerators:chip_wood_stairs",
 				"slab,createdieselgenerators:asphalt_block,createdieselgenerators:asphalt_slab",
 				"stairs,createdieselgenerators:asphalt_block,createdieselgenerators:asphalt_stairs",
+				"wall,everycomp:c/quark/azalea_window,everycomp:c/quark/azalea_window_pane",
+				"wall,everycomp:c/quark/ancient_window,everycomp:c/quark/ancient_window_pane",
+				"wall,everycomp:c/quark/blossom_window,everycomp:c/quark/blossom_window_pane",
 			]
 			# A list of block IDs and mappings to be excluded from variant selection.
 			#To exclude a block from being turned into other blocks, just include the block ID (e.g. minecraft:cobblestone).
