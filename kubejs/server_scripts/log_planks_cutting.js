@@ -1,18 +1,35 @@
 ServerEvents.recipes(event => {
 
+    function cuttingBoard(output, input) {
+        event.custom({
+            "type": "farmersdelight:cutting",
+            "tool": { "type": "farmersdelight:tool_action", "action": "axe_strip" },
+            "sound": "minecraft:item.axe.strip",
+            "result": output.map(item => Item.of(item).toJson()),
+            "ingredients": [ Ingredient.of(input) ],
+        });
+    }
+
     function add(mod, types, is_shroom) {
         for (const type of types) {
+            let log      = `${mod}:${type}_${is_shroom ? "stem" : "log"}`;
             let stripped = `${mod}:stripped_${type}_${is_shroom ? "stem" : "log"}`;
             let planks   = `${mod}:${type}_planks`;
 
-            // Remove the Vanilla crafting recipe.
-            event.remove({ type: "minecraft:crafting_shapeless", output: planks });
+            // Remove the default recipes for stripped logs and planks.
+            event.remove({ output: stripped });
+            event.remove({ output: planks });
 
-            // Add an in-world item application (right-click) recipe.
+            // Add in-world application (right-click) recipes for chopping logs and stripped logs.
+            event.recipes.createItemApplication([ stripped, "farmersdelight:tree_bark" ], [ log, `#minecraft:axes` ]);
             event.recipes.createItemApplication([ planks, Item.of(planks, 3) ], [ stripped, `#minecraft:axes` ]);
 
-            // Remove the Create cutting recipe, replace it with our own.
-            event.remove({ type: "create:cutting", output: planks });
+            // Re-add Farmer's Delight cutting recipes.
+            cuttingBoard([ stripped, "farmersdelight:tree_bark" ], log);
+            cuttingBoard([ Item.of(planks, 4) ], stripped);
+
+            // Re-add Create cutting recipes.
+            event.recipes.createCutting([ stripped, Item.of("farmersdelight:tree_bark").withChance(0.5) ], log);
             event.recipes.createCutting([               // TODO: Account for maximum stack size?
                 Item.of(planks, 4), Item.of(planks, 2), // Looks weird because planks stack up to 4 (by default).
                 Item.of("createdieselgenerators:wood_chip", 2),
