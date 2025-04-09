@@ -1,0 +1,13 @@
+{
+    "structures": [
+        { "structure": "kubejs:zinc_boulder"  , "weight": 60 },
+        { "structure": "kubejs:copper_boulder", "weight": 35 },
+        { "structure": "kubejs:iron_boulder"  , "weight":  5 }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 12,
+        "separation": 4,
+        "salt": 79187023
+    }
+}
