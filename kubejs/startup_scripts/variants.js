@@ -153,6 +153,10 @@ StartupEvents.postInit(event => {
     for (const type of [ "azalea", "ancient", "blossom" ])
         add(`everycomp:c/quark/${type}_window`, { wall: `everycomp:c/quark/${type}_window_pane` });
 
+    // Farmer's Delight
+
+    add("farmersdelight:tatami", { slab: "farmersdelight:half_tatami_mat", unique3: "farmersdelight:full_tatami_mat" });
+
 
 
     // Modify the requirements of Create schematics.
