@@ -2731,6 +2731,8 @@
 				"wall,everycomp:c/quark/azalea_window,everycomp:c/quark/azalea_window_pane",
 				"wall,everycomp:c/quark/ancient_window,everycomp:c/quark/ancient_window_pane",
 				"wall,everycomp:c/quark/blossom_window,everycomp:c/quark/blossom_window_pane",
+				"slab,farmersdelight:tatami,farmersdelight:half_tatami_mat",
+				"unique3,farmersdelight:tatami,farmersdelight:full_tatami_mat",
 			]
 			# A list of block IDs and mappings to be excluded from variant selection.
 			#To exclude a block from being turned into other blocks, just include the block ID (e.g. minecraft:cobblestone).
