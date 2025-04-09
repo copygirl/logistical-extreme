@@ -64,6 +64,7 @@ const groups = {
         "minecraft:flower_pot",
         "minecraft:pointed_dripstone", // 4 crafts into a block.
         "minecraft:iron_bars",
+        /_wool$/,
         // Large plants
         "minecraft:sunflower",
         "minecraft:lilac",
@@ -79,6 +80,7 @@ const groups = {
         "quark:gold_bars",
         "quark:redstone_randomizer",
         /_corundum_cluster$/,
+        "quark:bamboo_mat",
         // Create
         "create:andesite_bars",
         "create:brass_bars",
@@ -95,6 +97,8 @@ const groups = {
         "farmersdelight:sandy_shrub",
         /^farmersdelight:wild_/,
         /_mushroom_colony$/,
+        "farmersdelight:tatami",
+        "farmersdelight:canvas_rug",
     ],
     block_small: [
         /_button$/,
@@ -105,7 +109,7 @@ const groups = {
         "minecraft:torch",
         "minecraft:soul_torch",
         "minecraft:redstone_torch",
-        /_candle$/,
+        /[:_]candle$/,
         "minecraft:lightning_rod",
         "minecraft:end_rod",
         // Ladders, rails and similar
