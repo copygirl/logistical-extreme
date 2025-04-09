@@ -47,29 +47,23 @@ const groups = {
 
     block_large: [
         /_sign$/,
-        // Lanterns
         "minecraft:lantern",
         "minecraft:soul_lantern",
-        "quark:paper_lantern",
-        "quark:paper_lantern_sakura",
-        // Paintings, frames and similar
         "minecraft:painting",
         /[:_]item_frame$/,
+        // Quark
+        "quark:paper_lantern",
+        "quark:paper_lantern_sakura",
+        // Create
         "create:crafting_blueprint",
         "create:placard",
     ],
     block_medium: [
-        /_planks$/, // 1 log turns into 4 planks
+        /_planks$/, // 1 log turns into 4 planks.
         /_banners$/,
         "minecraft:flower_pot",
-        "quark:iron_grate",
-        "minecraft:pointed_dripstone", // 4 crafts into a block
-        // Bars
+        "minecraft:pointed_dripstone", // 4 crafts into a block.
         "minecraft:iron_bars",
-        "quark:gold_bars",
-        "create:andesite_bars",
-        "create:brass_bars",
-        "create:copper_bars",
         // Large plants
         "minecraft:sunflower",
         "minecraft:lilac",
@@ -78,26 +72,35 @@ const groups = {
         "minecraft:pitcher_plant",
         // Redstone components
         "minecraft:lever",
-        "create:analog_lever",
         "minecraft:repeater",
         "minecraft:comparator",
+        // Quark
+        "quark:iron_grate",
+        "quark:gold_bars",
         "quark:redstone_randomizer",
+        /_corundum_cluster$/,
+        // Create
+        "create:andesite_bars",
+        "create:brass_bars",
+        "create:copper_bars",
+        "create:analog_lever",
         "create:redstone_link",
-        "create_connected:linked_transmitter",
         "create:pulse_repeater",
         "create:pulse_extender",
         "create:powered_latch",
         "create:powered_toggle_latch",
+        "create_connected:linked_transmitter",
         "create_connected:sequenced_pulse_generator",
-        // Corundum clusters
-        /_corundum_cluster$/,
+        // Farmer's Delight
+        "farmersdelight:sandy_shrub",
+        /^farmersdelight:wild_/,
+        /_mushroom_colony$/,
     ],
     block_small: [
         /_button$/,
         /_pressure_plate$/,
         "minecraft:chain",
         "minecraft:tripwire_hook",
-        "quark:rope",
         // Torches, rods and similar
         "minecraft:torch",
         "minecraft:soul_torch",
@@ -105,13 +108,11 @@ const groups = {
         /_candle$/,
         "minecraft:lightning_rod",
         "minecraft:end_rod",
-        "quark:iron_rod",
         // Ladders, rails and similar
         /[:_]ladder$/,
         /[:_]rail$/,
         // Small plants
         /_mushroom$/,
-        "quark:glow_shroom",
         "minecraft:dandelion",
         "minecraft:poppy",
         "minecraft:blue_orchid",
@@ -136,18 +137,25 @@ const groups = {
         "minecraft:vine",
         "minecraft:big_dripleaf",
         "minecraft:small_dripleaf",
-        "quark:chorus_weeds",
-        "quark:chorus_twist",
         "minecraft:glow_lichen",
         "minecraft:hanging_roots",
-        "quark:glow_shroom_ring",
-        "quark:glow_lichen_growth",
         "minecraft:lily_pad",
         "minecraft:seagrass",
         "minecraft:sea_pickle",
         "minecraft:kelp",
         /_coral(_fan)?$/,
         "minecraft:sculk_vein",
+        // Quark
+        "quark:rope",
+        "quark:iron_rod",
+        "quark:chorus_weeds",
+        "quark:chorus_twist",
+        "quark:glow_shroom",
+        "quark:glow_shroom_ring",
+        "quark:glow_lichen_growth",
+        // Farmer's Delight
+        "farmersdelight:rope", // To be disabled.
+        "farmersdelight:sandy_shrub",
     ],
 
     // Items
@@ -155,14 +163,10 @@ const groups = {
     item_medium: [
         /_sapling$/,
         "minecraft:mangrove_propagule",
-        /^dynamictrees:.+_seed$/,
-        /^dynamictreesplus:.+_seed$/,
-        /^dtquark:.+_seed$/,
         "minecraft:bowl",
         "minecraft:flint",
         "minecraft:wheat",
         /_egg$/,
-        /^quark:egg_parrot_/,
         "minecraft:rotten_flesh",
         "minecraft:bone",
         "minecraft:blaze_rod",
@@ -174,15 +178,26 @@ const groups = {
         "minecraft:magma_cream",
         "minecraft:book",
         "minecraft:enchanted_book", // They SHOULD be stackable.
-        "quark:ancient_tome",
         "minecraft:echo_shard",
         "minecraft:rabbit_foot",
-        "quark:crab_shell",
         /_banner_pattern$/,
         /_sherd$/,
         /_template$/,
+        // Dynamic Trees
+        /^dynamictrees:.+_seed$/,
+        /^dynamictreesplus:.+_seed$/,
+        /^dtquark:.+_seed$/,
+        // Quark
+        "quark:ancient_tome",
+        /^quark:egg_parrot_/,
+        "quark:crab_shell",
+        // Create
         "create:filter",
         "create:attribute_filter",
+        // Farmer's Delight
+        "farmersdelight:straw",
+        "farmersdelight:canvas",
+        "farmersdelight:tree_bark",
     ],
     item_small: [
         /_dye$/,
@@ -196,14 +211,17 @@ const groups = {
         "minecraft:spider_eye",
         "minecraft:fermented_spider_eye",
         "minecraft:feather",
-        "create:sandpaper",
-        "create:red_sandpaper",
         "minecraft:ghast_tear",
         // Seeds
         /_seeds$/,
         "minecraft:cocoa_beans",
         "minecraft:pitcher_pod",
         "minecraft:nether_wart",
+        // Create
+        "create:sandpaper",
+        "create:red_sandpaper",
+        // Farmer's Delight
+        "farmersdelight:rice",
     ],
 
     // Mechanical
@@ -256,7 +274,6 @@ const groups = {
         "minecraft:melon_slice",
         "minecraft:glistering_melon_slice", // Not food but similar.
         "minecraft:chorus_fruit",
-        "quark:ancient_fruit",
         "minecraft:carrot",
         "minecraft:potato",
         "minecraft:poisonous_potato",
@@ -264,11 +281,27 @@ const groups = {
         "minecraft:cookie",
         "minecraft:glow_berries",
         "minecraft:sweet_berries",
+        // Quark
+        "quark:ancient_fruit",
+        // Farmer's Delight
+        "farmersdelight:tomato",
+        "farmersdelight:onion",
+        "farmersdelight:rice_panicle",
+        "farmersdelight:rotten_tomato",
+        "farmersdelight:pumpkin_slice",
+        "farmersdelight:cabbage_leaf",
+        "farmersdelight:cake_slice",
+        "farmersdelight:apple_pie_slice",
+        "farmersdelight:sweet_berry_cheesecake_slice",
+        "farmersdelight:chocolate_pie_slice",
+        "farmersdelight:sweet_berry_cookie",
+        "farmersdelight:honey_cookie",
+        "farmersdelight:melon_popsicle",
+        "farmersdelight:kelp_roll_slice",
     ],
     food_meal: [
         "minecraft:golden_apple",
         "minecraft:enchanted_golden_apple",
-        "create:honeyed_apple",
         "minecraft:golden_carrot",
         "minecraft:baked_potato",
         // Should raw meat and fish be in snack category?
@@ -278,23 +311,78 @@ const groups = {
         "minecraft:mutton", "minecraft:cooked_mutton",
         "minecraft:chicken", "minecraft:cooked_chicken",
         "minecraft:rabbit", "minecraft:cooked_rabbit",
-        "quark:crab_leg", "quark:cooked_crab_leg",
         "minecraft:cod", "minecraft:cooked_cod",
         "minecraft:salmon", "minecraft:cooked_salmon",
         "minecraft:tropical_fish",
         "minecraft:pufferfish",
         "minecraft:bread",
-        "create:dough",
-        "create:bar_of_chocolate",
-        "create:chocolate_glazed_berries",
         // Bottles, potions
         /_bottle$/,
         /[:_]potion$/,
         "minecraft:dragon_breath",
+        // Quark
+        "quark:crab_leg", "quark:cooked_crab_leg",
+        // Create
+        "create:honeyed_apple",
         "create:builders_tea",
+        "create:dough",
+        "create:bar_of_chocolate",
+        "create:chocolate_glazed_berries",
+        // Farmer's Delight
+        "farmersdelight:cabbage", // Cuts into 2 cabbage leaves.
+        "farmersdelight:fried_egg",
+        "farmersdelight:hot_cocoa",
+        "farmersdelight:apple_cider",
+        "farmersdelight:melon_juice",
+        "farmersdelight:glow_berry_custard",
+        "farmersdelight:wheat_dough", // To be disabled.
+        "farmersdelight:raw_pasta",
+        "farmersdelight:minced_beef", "farmersdelight:beef_patty",
+        "farmersdelight:chicken_cuts", "farmersdelight:cooked_chicken_cuts",
+        "farmersdelight:bacon", "farmersdelight:cooked_bacon",
+        "farmersdelight:cod_slice", "farmersdelight:cooked_cod_slice",
+        "farmersdelight:salmon_slice", "farmersdelight:cooked_salmon_slice",
+        "farmersdelight:mutton_slice", "farmersdelight:cooked_mutton_slice",
+        "farmersdelight:ham", "farmersdelight:smoked_ham",
+        "farmersdelight:barbecue_stick",
+        /_sandwich$/,
+        /[:_]hamburger$/,
+        "farmersdelight:mutton_wrap",
+        "farmersdelight:dumplings",
+        "farmersdelight:stuffed_potato",
+        "farmersdelight:cabbage_rolls",
+        "farmersdelight:salmon_roll",
+        "farmersdelight:cod_roll",
+        "farmersdelight:kelp_roll",
+        "farmersdelight:dog_food",
+        "farmersdelight:horse_feed",
     ],
     food_feast: [
+        /_soup$/,
         /_stew$/,
+        /_salad$/,
+        // Farmer's Delight
+        "farmersdelight:tomato_sauce",
+        "farmersdelight:pie_crust",
+        "farmersdelight:apple_pie",
+        "farmersdelight:sweet_berry_cheesecake",
+        "farmersdelight:chocolate_pie",
+        "farmersdelight:cooked_rice",
+        "farmersdelight:bone_broth",
+        "farmersdelight:bacon_and_eggs",
+        "farmersdelight:pasta_with_meatballs",
+        "farmersdelight:pasta_with_mutton_chop",
+        "farmersdelight:mushroom_rice",
+        "farmersdelight:roasted_mutton_chop",
+        "farmersdelight:vegetable_noodles",
+        "farmersdelight:steak_and_potatoes",
+        "farmersdelight:ratatouille",
+        "farmersdelight:squid_ink_pasta",
+        "farmersdelight:grilled_salmon",
+        "farmersdelight:roast_chicken",
+        "farmersdelight:stuffed_pumpkin",
+        "farmersdelight:honey_glazed_ham",
+        "farmersdelight:shepherds_pie",
     ],
 
     // Other
