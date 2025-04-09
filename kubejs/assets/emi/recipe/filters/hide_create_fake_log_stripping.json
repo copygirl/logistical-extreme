@@ -1,0 +1,6 @@
+{
+    "filters": [{
+        "category": "create:item_application",
+        "id": "/_via_vanilla_stripping$/"
+    }]
+}
