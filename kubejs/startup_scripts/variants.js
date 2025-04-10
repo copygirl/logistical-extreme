@@ -43,9 +43,13 @@ StartupEvents.postInit(event => {
         add(`minecraft:${color}_stained_glass`, { wall: `minecraft:${color}_stained_glass_pane` });
     }
 
+    add("minecraft:cobbled_deepslate", { unique3: "minecraft:chiseled_deepslate" });
+    add("minecraft:quartz_block", { unique2: "minecraft:quartz_pillar" });
+    add("minecraft:purpur_block", { unique2: "minecraft:purpur_pillar" });
+
     add("minecraft:snow_block", { slab: "minecraft:snow" });
     add("minecraft:moss_block", { slab: "minecraft:moss_carpet" });
-    add("minecraft:cobbled_deepslate", { unique3: "minecraft:chiseled_deepslate" });
+
     add("minecraft:iron_block", { unique2: "minecraft:iron_trapdoor" });
 
     // Quark
@@ -79,10 +83,6 @@ StartupEvents.postInit(event => {
         "thatch",
     ]);
 
-    add("minecraft:mud_bricks", { unique2: "quark:mud_pillar", unique3: "quark:carved_mud_bricks" });
-    add("quark:iron_plate", { unique2: "quark:iron_pillar" });
-    add("quark:bamboo_mat", { slab: "quark:bamboo_mat_carpet" });
-
     for (const type of [ "dripstone_block", "calcite", "tuff" ])
         add(`minecraft:${type}`, {
             slab     : `quark:${type}_slab`,
@@ -90,6 +90,15 @@ StartupEvents.postInit(event => {
             stairs   : `quark:${type}_stairs`,
             wall     : `quark:${type}_wall`,
         });
+
+    // Pillars
+    for (const type of [ "granite", "diorite", "andesite" ])
+        add(`minecraft:polished_${type}`, { unique2: `quark:${type}_pillar` });
+    for (const type of [ "jasper", "shale", "myalite", "dripstone", "calcite", "tuff" ])
+        add(`quark:polished_${type}`, { unique2: `quark:${type}_pillar` });
+    add("minecraft:mud_bricks"  , { unique2: "quark:mud_pillar" });
+    add("quark:midori_block"    , { unique2: "quark:midori_pillar" });
+    add("quark:iron_plate"      , { unique2: "quark:iron_pillar" });
 
     addAuto("quark:shingles");
     add("quark:framed_glass", { wall: "quark:framed_glass_pane" });
@@ -106,6 +115,9 @@ StartupEvents.postInit(event => {
     for (const type of [ "ancient", "blue_blossom", "lavender_blossom", "orange_blossom", "yellow_blossom", "red_blossom" ])
         add(`quark:${type}_leaves`, { slab: `quark:${type}_leaf_carpet` });
 
+    add("minecraft:mud_bricks", { unique3: "quark:carved_mud_bricks" });
+    add("quark:bamboo_mat", { slab: "quark:bamboo_mat_carpet" });
+
     // Create
 
     for (const waxed of [ "", "waxed_" ])
@@ -117,7 +129,7 @@ StartupEvents.postInit(event => {
     for (const type of [ "granite", "diorite", "andesite", "calcite", "dripstone", "deepslate", "tuff",
                          "asurine", "crimsite", "limestone", "ochrum", "scoria", "scorchia", "veridium" ]) {
         addAutoMany("create", [ `cut_${type}`, `polished_cut_${type}`, `cut_${type}_bricks`, `small_${type}_bricks` ]);
-        add(`create:polished_cut_${type}`, { unique2: `create:${type}_pillar`, unique2: `create:layered_${type}` });
+        add(`create:polished_cut_${type}`, { unique2: `create:${type}_pillar`, unique3: `create:layered_${type}` });
     }
 
     for (const type of [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "crimson", "warped", "mangrove", "ornate_iron" ])
@@ -236,7 +248,7 @@ const consider = {
     stairs   : { stairs: {} },
     wall     : { fence: {}, wall: {} }, // prefer "wall" over "fence" if both exist
     unique1  : { fence_gate: {} },
-    unique2  : { trapdoor: {}, pillar: { mods: [ "quark" ] } },
+    unique2  : { trapdoor: {} },
     unique3  : { chiseled: { prefix: true, mods: [ "quark" ] }, },
 };
 
