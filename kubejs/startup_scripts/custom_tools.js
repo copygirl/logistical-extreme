@@ -10,8 +10,10 @@ ItemEvents.toolTierRegistry(event =>
 
 StartupEvents.registry("block", event =>
     event.create("kubejs:flint_pebble")
-        .displayName("Flint Pebble").stoneSoundType()
-        .hardness(0).box(5, 0, 5, 11, 3, 11).noCollision());
+        .displayName("Flint Pebble")
+        .stoneSoundType().hardness(0)
+        .box(5, 0, 5, 11, 3, 11).noCollision()
+        .fullBlock(false).waterlogged());
 
 StartupEvents.registry("item", event => {
     event.create("flint_axe_head"   ).unstackable().displayName("Flint Axe Head");
