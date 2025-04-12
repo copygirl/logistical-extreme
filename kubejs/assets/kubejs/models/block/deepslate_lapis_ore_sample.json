@@ -1,5 +1,5 @@
 {
-  "parent": "kubejs:block/ore_sample",
+  "parent": "kubejs:block/deepslate_ore_sample",
   "textures": {
     "particle": "block/deepslate",
     "ore": "block/deepslate_lapis_ore"

@@ -24,17 +24,17 @@ StartupEvents.registry("block", event => {
             .displayName(`${name} Sample`)
             .stoneSoundType().lightLevel(0.3)
             .hardness(0.2).resistance(2.0)
-            .box(4,0,4, 12,4,12).noCollision()
-            .waterlogged()
+            .box(5,0,5, 11,3,11).noCollision()
+            .fullBlock(false).waterlogged()
             .tagBlock("mineable/pickaxe")
-            .tagBlock("kubejs:sample");
+            .tagBlock("kubejs:ore_sample");
         event.create(`deepslate_${id}`)
             .displayName(`Deepslate ${name} Sample`)
             .stoneSoundType().lightLevel(0.3)
-            .hardness(0.2).resistance(2.0)
+            .hardness(0.5).resistance(3.0)
             .box(4,0,4, 12,4,12).noCollision()
-            .waterlogged()
+            .fullBlock(false).waterlogged()
             .tagBlock("mineable/pickaxe")
-            .tagBlock("kubejs:sample");
+            .tagBlock("kubejs:ore_sample");
     }
 });

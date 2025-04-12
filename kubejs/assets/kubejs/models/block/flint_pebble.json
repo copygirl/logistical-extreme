@@ -1,0 +1,7 @@
+{
+  "parent": "kubejs:block/ore_sample",
+  "textures": {
+    "particle": "kubejs:block/flint_block",
+    "ore": "kubejs:block/flint_block"
+  }
+}
