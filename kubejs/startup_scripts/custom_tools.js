@@ -23,7 +23,10 @@ StartupEvents.registry("item", event => {
     event.create("flint_knife_blade").displayName("Flint Knife Blade")
         .maxDamage(21).tag("farmersdelight:straw_harvesters");
 
-    event.create("flint_axe"   , "axe"   ).tier("flint").displayName("Flint Axe");
-    event.create("flint_shovel", "shovel").tier("flint").displayName("Flint Shovel");
-    event.create("flint_hoe"   , "hoe"   ).tier("flint").displayName("Flint Hoe");
+    event.create("flint_axe", "axe").displayName("Flint Axe")
+        .tier("flint").tag("minecraft:tools").tag("minecraft:axes");
+    event.create("flint_shovel", "shovel").displayName("Flint Shovel")
+        .tier("flint").tag("minecraft:tools").tag("minecraft:shovels");
+    event.create("flint_hoe", "hoe").displayName("Flint Hoe")
+        .tier("flint").tag("minecraft:tools").tag("minecraft:hoes");
 });
