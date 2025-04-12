@@ -11,4 +11,6 @@ LootJS.modifiers(event => {
         replace(`kubejs:deepslate_${id}`, drop);
     }
 
+    replace("kubejs:flint_pebble", "minecraft:flint");
+
 });
