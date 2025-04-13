@@ -6,6 +6,7 @@ ServerEvents.recipes(event => {
     const A = "create:andesite_alloy";
     const P = "create:mechanical_piston";
     const K = "kubejs:kinetic_mechanism";
+    const F = "kubejs:fluid_mechanism";
 
     function shaped(output, shape, lookup) { event.remove({ output: Item.of(output) }); event.shaped(output, shape, lookup); }
     function shapeless(output, input)      { event.remove({ output: Item.of(output) }); event.shapeless(output, input); }
@@ -60,6 +61,9 @@ ServerEvents.recipes(event => {
     event.replaceInput({ id: "create:crafting/kinetics/brass_hand" }, "create:brass_sheet", "create:golden_sheet");
     shaped("create:deployer", [ " K ", "CPH", " K " ], { C: "create:andesite_casing", H: "create:brass_hand", P: P, K: K });
 
+    shaped("create:rope_pulley", [ " C ", "KRK", " S " ], { C: "create:andesite_casing", S: "create:iron_sheet", R: "quark:rope", K: K });
+    shaped("create:portable_storage_interface", [ " K ", "CPO", " K " ], { C: "create:andesite_casing", O: "create:chute", P: P, K: K });
+
     // Minecarts and rails
     event.remove({ input: "minecraft:iron_ingot", output: /[:_]minecart$/ });
     event.shaped("minecraft:minecart", [ "A A", "AAA", "S S" ], { A: A, S: S });
@@ -89,8 +93,16 @@ ServerEvents.recipes(event => {
         B: Item.of("minecraft:potion", '{Potion:"minecraft:water"}').strongNBT(),
     });
 
+    // Fluid pipes
+    shaped("create:mechanical_pump" , [ " A ", "PFP", " A " ], { P: "create:fluid_pipe", F: F, A: A });
+    shaped("create:smart_fluid_pipe", [ " B ", "PFP", " E " ], { P: "create:fluid_pipe", B: "create:brass_sheet", E: "create:electron_tube", F: F });
+    shaped("create:fluid_valve"     , [ " I ", "PFP", " C " ], { P: "create:fluid_pipe", I: "create:iron_sheet", F: F, C: C });
+
     // Fluid / copper machines
     event.replaceInput({ id: "create:crafting/kinetics/whisk" }, "create:iron_sheet", "create:copper_sheet");
-    shaped("create:mechanical_mixer", [ " C ", "KPK", " W " ], { C: "create:copper_casing"  , W: "create:whisk", P: P, K: K });
+    shaped("create:mechanical_mixer"        , [ " C ", "KPK", " W " ], { C: "create:copper_casing", W: "create:whisk", P: P, K: K });
+    shaped("create:spout"                   , [ " C ", "FTF", " R " ], { C: "create:copper_casing", T: "create:fluid_tank", R: "minecraft:dried_kelp", F: F });
+    shaped("create:hose_pulley"             , [ " C ", "FRF", " S " ], { C: "create:copper_casing", S: "create:copper_sheet", R: "minecraft:dried_kelp_block", F: F });
+    shaped("create:portable_fluid_interface", [ " F ", "CPO", " F " ], { C: "create:copper_casing", O: "create:chute", P: P, F: F });
 
 });
