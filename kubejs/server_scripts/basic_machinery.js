@@ -5,11 +5,15 @@ ServerEvents.recipes(event => {
     const G = "create:gearbox";
     const A = "create:andesite_alloy";
     const P = "create:mechanical_piston";
-    const E = "create:piston_extension_pole";
     const K = "kubejs:kinetic_mechanism";
 
     function shaped(output, shape, lookup) { event.remove({ output: Item.of(output) }); event.shaped(output, shape, lookup); }
     function shapeless(output, input)      { event.remove({ output: Item.of(output) }); event.shapeless(output, input); }
+
+
+    // ====================
+    // == Basic Kinetics ==
+    // ====================
 
     // Reduce the amount of shafts you get by crafting.
     // Reasoning being that there will be more efficient ways to craft andesite alloy.
@@ -33,27 +37,29 @@ ServerEvents.recipes(event => {
     event.shaped("create:large_cogwheel", [ "BBB", "BCB", "BBB" ], { C: C, B: "#minecraft:wooden_buttons" });
     // TODO: Add custom sequenced assembly recipe for small and large cogwheels.
 
+
+    // ============================
+    // == Andesite Tier Machines ==
+    // ============================
+
     // Kinetic Mechanism, the basis for any machines.
     event.shaped("kubejs:kinetic_mechanism", [ "WCW", "CSC", "WCW" ], { W: "#minecraft:planks", C: C, S: S });
     // TODO: Sequenced assembly recipe for kinetic mechanism.
 
+    shaped("create:basin"    , [ "A A", "A A", "AAA" ], { A: A });
+    shaped("create:millstone", [ " H ", "ACA", "KGK" ], { H: "minecraft:hopper", C: C, G: G, A: A, K: K });
+    shaped("minecraft:hopper", [ "ACA", "AKA", " A " ], { C: "#forge:chests/wooden", A: A, K: K });
+
     // Custom saw blade and drill head component.
     event.shaped("kubejs:saw_blade" , [ " I ", "ISI", " I " ], { I: "create:iron_sheet", S: S });
     event.shaped("kubejs:drill_head", [ "SA ", "ASI", " II" ], { I: "create:iron_sheet", S: S, A: A });
-
-    // Switch brass hand to use gold, instead.
-    event.replaceInput({ id: "create:crafting/kinetics/brass_hand" },
-        "create:brass_sheet", "create:golden_sheet");
-
-    // Machines
-    shaped("create:basin"           , [ "A A", "A A", "AAA" ], { A: A });
-    shaped("minecraft:hopper"       , [ "ACA", "AKA", " A " ], { C: "#forge:chests/wooden", A: A, K: K });
-    shaped("create:millstone"       , [ " H ", "ACA", "KGK" ], { H: "minecraft:hopper", C: C, G: G, A: A, K: K });
-    shaped("create:mechanical_press", [ " E ", "KPK", " I " ], { I: "minecraft:iron_block", E: E, P: P, K: K });
-    shaped("create:mechanical_mixer", [ " E ", "KPK", " W " ], { W: "create:whisk", E: E, P: P, K: K });
-    shaped("create:deployer"        , [ " K ", "EPH", " K " ], { H: "create:brass_hand", E: E, P: P, K: K });
     shaped("create:mechanical_saw"  , [ "KA ", "GCS", "KA " ], { S: "kubejs:saw_blade", K: K, A: A, G: G, C: C });
-    shaped("create:mechanical_drill", [ "KA ", "CSD", "KA " ], { D: "kubejs:drill_head", C: "create:andesite_casing", K: K, A: A, S: S });
+    shaped("create:mechanical_drill", [ "KA ", "CSD", "KA " ], { C: "create:andesite_casing", D: "kubejs:drill_head", K: K, A: A, S: S });
+    shaped("create:mechanical_press", [ " C ", "KPK", " I " ], { C: "create:andesite_casing", I: "minecraft:iron_block", P: P, K: K });
+
+    // For deployer, replace brass with gold for its hand.
+    event.replaceInput({ id: "create:crafting/kinetics/brass_hand" }, "create:brass_sheet", "create:golden_sheet");
+    shaped("create:deployer", [ " K ", "CPH", " K " ], { C: "create:andesite_casing", H: "create:brass_hand", P: P, K: K });
 
     // Minecarts and rails
     event.remove({ input: "minecraft:iron_ingot", output: /[:_]minecart$/ });
@@ -65,5 +71,14 @@ ServerEvents.recipes(event => {
     event.recipes.createDeploying("minecraft:powered_rail"  , [ "minecraft:activator_rail", "create:golden_sheet" ]);
     event.recipes.createDeploying("create:controller_rail"  , [ "minecraft:powered_rail"  , "create:electron_tube" ]);
     // TODO: Add sequenced assembly recipe for rails?
+
+
+    // ==========================
+    // == Copper Tier Machines ==
+    // ==========================
+
+    // Fluid / copper machines
+    event.replaceInput({ id: "create:crafting/kinetics/whisk" }, "create:iron_sheet", "create:copper_sheet");
+    shaped("create:mechanical_mixer", [ " C ", "KPK", " W " ], { C: "create:copper_casing"  , W: "create:whisk", P: P, K: K });
 
 });
