@@ -57,10 +57,6 @@ ServerEvents.recipes(event => {
     shaped("create:mechanical_drill", [ "KA ", "CSD", "KA " ], { C: "create:andesite_casing", D: "kubejs:drill_head", K: K, A: A, S: S });
     shaped("create:mechanical_press", [ " C ", "KPK", " I " ], { C: "create:andesite_casing", I: "minecraft:iron_block", P: P, K: K });
 
-    // For deployer, replace brass with gold for its hand.
-    event.replaceInput({ id: "create:crafting/kinetics/brass_hand" }, "create:brass_sheet", "create:golden_sheet");
-    shaped("create:deployer", [ " K ", "CPH", " K " ], { C: "create:andesite_casing", H: "create:brass_hand", P: P, K: K });
-
     shaped("create:rope_pulley", [ " C ", "KRK", " S " ], { C: "create:andesite_casing", S: "create:iron_sheet", R: "quark:rope", K: K });
     shaped("create:portable_storage_interface", [ " K ", "CPO", " K " ], { C: "create:andesite_casing", O: "create:chute", P: P, K: K });
 
@@ -104,5 +100,17 @@ ServerEvents.recipes(event => {
     shaped("create:spout"                   , [ " C ", "FTF", " R " ], { C: "create:copper_casing", T: "create:fluid_tank", R: "minecraft:dried_kelp", F: F });
     shaped("create:hose_pulley"             , [ " C ", "FRF", " S " ], { C: "create:copper_casing", S: "create:copper_sheet", R: "minecraft:dried_kelp_block", F: F });
     shaped("create:portable_fluid_interface", [ " F ", "CPO", " F " ], { C: "create:copper_casing", O: "create:chute", P: P, F: F });
+
+
+    // ========================
+    // == Gold Tier Machines ==
+    // ========================
+
+    // Precision mechanism, the basis for any machine that needs precise timing or movement.
+    shaped("create:precision_mechanism", [ "G", "C", "K" ], { C: "minecraft:clock", G: "#forge:glass/colorless", K: K });
+
+    // For deployer's hand, replace brass with gold and include a precision mechanism.
+    shaped("create:brass_hand", [ " A ", "SPS", " S " ], { S: "create:brass_sheet", P: "create:precision_mechanism", A: A });
+    shaped("create:deployer"  , [ " K ", "CPH", " K " ], { C: "create:andesite_casing", H: "create:brass_hand", P: P, K: K });
 
 });
