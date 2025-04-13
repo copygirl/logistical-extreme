@@ -44,7 +44,6 @@ ServerEvents.recipes(event => {
 
     // Kinetic Mechanism, the basis for any machines.
     event.shaped("kubejs:kinetic_mechanism", [ "WCW", "CSC", "WCW" ], { W: "#minecraft:planks", C: C, S: S });
-    // TODO: Sequenced assembly recipe for kinetic mechanism.
 
     shaped("create:basin"    , [ "A A", "A A", "AAA" ], { A: A });
     shaped("create:millstone", [ " H ", "ACA", "KGK" ], { H: "minecraft:hopper", C: C, G: G, A: A, K: K });
@@ -76,6 +75,19 @@ ServerEvents.recipes(event => {
     // ==========================
     // == Copper Tier Machines ==
     // ==========================
+
+    // Fluid Mechanism, the basis for any machine dealing with fluids.
+    event.shaped("kubejs:fluid_mechanism", [
+        "CGC",
+        "PKP",
+        "CBC",
+    ], {
+        K: "kubejs:kinetic_mechanism",
+        C: "minecraft:copper_ingot",
+        P: "create:fluid_pipe",
+        G: "#forge:glass/colorless",
+        B: Item.of("minecraft:potion", '{Potion:"minecraft:water"}').strongNBT(),
+    });
 
     // Fluid / copper machines
     event.replaceInput({ id: "create:crafting/kinetics/whisk" }, "create:iron_sheet", "create:copper_sheet");
