@@ -14,7 +14,7 @@ global.SAMPLES = {
 
 for (const key in global.SAMPLES) {
     var entry  = global.SAMPLES[key];
-    entry.id   = `${key}_ore_sample`
+    entry.id   = `${key}_ore_sample`;
     entry.name = entry.name || `${key[0].toUpperCase()}${key.substring(1)}`;
 }
 

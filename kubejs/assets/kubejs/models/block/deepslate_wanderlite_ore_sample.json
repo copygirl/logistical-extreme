@@ -1,7 +1,0 @@
-{
-  "parent": "kubejs:block/deepslate_ore_sample",
-  "textures": {
-    "particle": "block/stone",
-    "ore": "vs_clockwork:block/deepslate_wanderlite_ore"
-  }
-}
