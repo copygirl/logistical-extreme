@@ -18,7 +18,7 @@ Fluid.prototype.registerFluid = function(event) {
 Fluid.prototype.registerMolds = function(event) {
     for (const mold of this.molds) {
         let mold_id = `kubejs:${this.name}_${mold}_mold`;
-        let mold_display_name = `${getDisplayName(mold)} Mold of ${this.display_name}}`;
+        let mold_display_name = `${getDisplayName(mold)} Mold of ${this.display_name}`;
         let mold_sound = global.MOLDS[mold].sound;
         event.create(mold_id).displayName(mold_display_name)
             .soundType(mold_sound).lightLevel(this.light).box(5,0,3, 11,4,13)
